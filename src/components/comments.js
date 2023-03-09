@@ -21,7 +21,7 @@ const Input = styled.input`
   background-color: ${({ theme }) => theme.inputs};
   outline: none;
   padding: 15px;
-  color:${({ theme }) => theme.text}};
+  color: ${({ theme }) => theme.text};
   font-size: 15px;
   font-weight: bold;
   border-radius: 15px;

@@ -14,9 +14,9 @@ const Help = styled.a`
 const about = () => {
   return (
     <>
-      <Help href="">LinkedIn</Help>
+      <Help href="https://www.linkedin.com/in/jagritkamra/">LinkedIn</Help>
       <br />
-      <Help href="">Github</Help>
+      <Help href="https://github.com/jagritx">Github</Help>
     </>
   );
 };
