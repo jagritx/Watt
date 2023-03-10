@@ -8,6 +8,7 @@ import axios from "axios";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 axios.defaults.baseURL = "https://mix-api-production.up.railway.app/api";
+axios.defaults.withCredentials = true;
 
 root.render(
   <React.StrictMode>
