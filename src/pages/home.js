@@ -15,9 +15,7 @@ const Home = ({ type }) => {
   const [videos, setVideos] = useState([]);
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`/videos/${type}`, {
-        credentials: "include",
-      });
+      const res = await axios.get(`/videos/${type}`);
       setVideos(res.data);
     };
     fetchVideos();
