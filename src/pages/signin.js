@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
@@ -93,7 +94,7 @@ const Signin = () => {
     try {
       const res = await axios.post("/auth/signin", { name, password });
       const token = res.data.token;
-      setCookie("accessToken", token, 1);
+      Cookies.set("accessToken", token, { expires: 1 });
       dispatch(loginSuccess(res.data));
       navigate(`/`);
     } catch (err) {
@@ -107,7 +108,7 @@ const Signin = () => {
     try {
       const res = await axios.post("/auth/signup", { name, email, password });
       const token = res.data.token;
-      setCookie("accessToken", token, 1);
+      Cookies.set("accessToken", token, { expires: 1 });
       dispatch(loginSuccess(res.data));
       navigate(`/`);
     } catch (err) {
@@ -126,7 +127,7 @@ const Signin = () => {
           })
           .then((res) => {
             const token = res.data.token;
-            setCookie("accessToken", token, 1);
+            Cookies.set("accessToken", token, { expires: 1 });
             dispatch(loginSuccess(res.data));
           });
         navigate(`/`);
