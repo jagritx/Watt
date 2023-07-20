@@ -92,6 +92,8 @@ const Signin = () => {
     dispatch(loginStart());
     try {
       const res = await axios.post("/auth/signin", { name, password });
+      const token = res.data.token;
+      setCookie("accessToken", token, 1);
       dispatch(loginSuccess(res.data));
       navigate(`/`);
     } catch (err) {
@@ -104,6 +106,8 @@ const Signin = () => {
     dispatch(loginStart());
     try {
       const res = await axios.post("/auth/signup", { name, email, password });
+      const token = res.data.token;
+      setCookie("accessToken", token, 1);
       dispatch(loginSuccess(res.data));
       navigate(`/`);
     } catch (err) {
@@ -121,6 +125,8 @@ const Signin = () => {
             img: result.user.photoURL,
           })
           .then((res) => {
+            const token = res.data.token;
+            setCookie("accessToken", token, 1);
             dispatch(loginSuccess(res.data));
           });
         navigate(`/`);
