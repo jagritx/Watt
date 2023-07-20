@@ -96,7 +96,6 @@ const Signin = () => {
       const token = res.data.token;
       Cookies.set("accessToken", token, { expires: 1 });
       dispatch(loginSuccess(res.data));
-      navigate(`/`);
     } catch (err) {
       dispatch(loginFailure());
     }
@@ -110,7 +109,6 @@ const Signin = () => {
       const token = res.data.token;
       Cookies.set("accessToken", token, { expires: 1 });
       dispatch(loginSuccess(res.data));
-      navigate(`/`);
     } catch (err) {
       dispatch(loginFailure());
     }
@@ -130,7 +128,6 @@ const Signin = () => {
             Cookies.set("accessToken", token, { expires: 1 });
             dispatch(loginSuccess(res.data));
           });
-        navigate(`/`);
       })
       .catch((error) => {
         dispatch(loginFailure());
